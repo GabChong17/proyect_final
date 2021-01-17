@@ -23,7 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(auth()->user()->email == "xrl869@hotmail.com"){
+            return view('home');
+        }       
+         else if(auth()->user()->email == "roberto24@gmail.com"){
+	       return view('cliente');
+        }else{
+	        return 'error';
+        }   
+
     }
 
     public function contador()
